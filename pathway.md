@@ -230,6 +230,8 @@ Test redact() in the JVM: key pattern masked; "rtmps://a.rtmp.youtube.com:443/li
 
 > **DONE TILL HERE (implementation):** Module 1 is implemented through Step 1.5. The dependency build and JVM test gate is still pending because terminal execution is blocked by the sandbox.
 
+> **CURRENT STEP:** Module 2 Step 2.1 is implemented locally; its JVM test gate is pending because Gradle cannot download dependencies in the restricted terminal.
+
 ---
 
 # MODULE 2 — Domain Core (pure Kotlin)
