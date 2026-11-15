@@ -49,7 +49,7 @@ fun chooseProfile(info: VideoInfo, preference: QualityPreference): EncoderProfil
         width = dimensions.first,
         height = dimensions.second,
         fps = (info.frameRate ?: Defaults.DEFAULT_FPS.toFloat())
-            .coerceAtMost(Defaults.MAX_FPS).toInt().coerceAtLeast(1),
+            .coerceAtMost(Defaults.MAX_FPS.toFloat()).toInt().coerceAtLeast(1),
         videoBitrateKbps = bitrate,
     )
 }
