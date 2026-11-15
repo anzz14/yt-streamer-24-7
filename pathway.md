@@ -175,6 +175,8 @@ Do not add any feature code. Initialise git and commit.
 ```
 **Test:** app runs on the phone showing the template screen. Commit `chore: scaffold`.
 
+> **DONE TILL HERE (initial marker):** Step 1.1 scaffold created and `assembleDebug` passed.
+
 ### Step 1.2 — Version catalog + dependencies (pinned)
 ```text
 Edit gradle/libs.versions.toml and app/build.gradle.kts. Add (versions as variables in the catalog, none hard-coded in the app file):
@@ -225,6 +227,8 @@ Create util/Log.kt: object Log { d/i/w/e(msg, throwable?) } with tag "LoopCast";
 Test redact() in the JVM: key pattern masked; "rtmps://a.rtmp.youtube.com:443/live2/abcd-efgh-ijkl-mnop-qrst" -> ".../live2/****"; normal text unchanged.
 ```
 **Test:** `./gradlew test` (redact tests). ✅ Gate: app launches, tests green. Commit `feat: logger with redaction`.
+
+> **DONE TILL HERE (implementation):** Module 1 is implemented through Step 1.5. The dependency build and JVM test gate is still pending because terminal execution is blocked by the sandbox.
 
 ---
 

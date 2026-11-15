@@ -1,0 +1,9 @@
+- Kotlin, Jetpack Compose, Coroutines/Flow. No `!!`, no GlobalScope, no Thread.sleep.
+- Layers: ui -> viewmodel -> StreamController -> StreamEngine(interface) -> RootEncoderEngine. Only RootEncoderEngine imports com.pedro.*.
+- domain/ is pure Kotlin: no android.*, no Context, no Log. Every domain class has a JVM unit test written in the same change.
+- Composables <= 80 lines and stateless (state down, events up). ViewModels <= 150 lines. Functions <= 30 lines.
+- State changes only through the pure function reduce(state, event). Illegal transitions are ignored and reported, never crash.
+- Never log the stream key or full RTMP URL. Use the Log wrapper in util/Log.kt (tag "LoopCast", redacts anything that looks like a key).
+- Time/Random/Dispatchers are injected so tests are deterministic (runTest + virtual time).
+- No library API invented from memory: verify against source/docs, or say "unsure".
+- No new dependency without stating why. Constants live in domain/Defaults.kt.
