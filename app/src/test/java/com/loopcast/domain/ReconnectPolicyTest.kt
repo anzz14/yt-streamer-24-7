@@ -10,9 +10,9 @@ class ReconnectPolicyTest {
     fun exponentialDelayCapsWithoutJitter() {
         val policy = ReconnectPolicy(Random(1), ReconnectPolicy.Config(jitter = 0.0))
 
-        assertEquals(1_000, policy.nextDelay(1))
-        assertEquals(2_000, policy.nextDelay(2))
-        assertEquals(30_000, policy.nextDelay(8))
+        assertEquals(1_000L, policy.nextDelay(1))
+        assertEquals(2_000L, policy.nextDelay(2))
+        assertEquals(30_000L, policy.nextDelay(8))
     }
 
     @Test

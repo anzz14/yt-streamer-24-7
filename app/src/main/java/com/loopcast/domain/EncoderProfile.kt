@@ -27,13 +27,13 @@ fun chooseProfile(info: VideoInfo, preference: QualityPreference): EncoderProfil
     val sourceWidth = evenAtLeastOne(info.width)
     val sourceHeight = evenAtLeastOne(info.height)
     val portrait = sourceWidth < sourceHeight
-    val longEdge = maxOf(sourceWidth, sourceHeight)
+    val sourceClassHeight = minOf(sourceWidth, sourceHeight)
     val preset = when {
-        preference == QualityPreference.P1080 && longEdge >= Defaults.P1080_HEIGHT ->
+        preference == QualityPreference.P1080 && sourceClassHeight >= Defaults.P1080_HEIGHT ->
             Preset(Defaults.P1080_WIDTH, Defaults.P1080_HEIGHT, Defaults.P1080_BITRATE_KBPS)
-        preference != QualityPreference.P720 && longEdge >= Defaults.P1080_HEIGHT ->
+        preference != QualityPreference.P720 && sourceClassHeight >= Defaults.P1080_HEIGHT ->
             Preset(Defaults.P1080_WIDTH, Defaults.P1080_HEIGHT, Defaults.P1080_BITRATE_KBPS)
-        longEdge >= Defaults.P720_HEIGHT ->
+        sourceClassHeight >= Defaults.P720_HEIGHT ->
             Preset(Defaults.P720_WIDTH, Defaults.P720_HEIGHT, Defaults.P720_BITRATE_KBPS)
         else -> null
     }

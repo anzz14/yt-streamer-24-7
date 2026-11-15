@@ -13,6 +13,7 @@ class StreamStateTest {
         var state: StreamState = StreamState.Idle(source)
         state = reduce(state, StreamEvent.StartRequested).state
         state = reduce(state, StreamEvent.PrepareOk).state
+        state = reduce(state, StreamEvent.ConnectRequested).state
         state = reduce(state, StreamEvent.ConnectOk(100)).state
         assertTrue(state is StreamState.Live)
         state = reduce(state, StreamEvent.StopRequested).state

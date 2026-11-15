@@ -10,7 +10,7 @@ class StreamKeyTest {
         val result = StreamKey.parse("  abcd-efgh  ").getOrThrow()
 
         assertEquals("abcd-efgh", result.reveal())
-        assertEquals("••••-efgh", result.toString())
+        assertEquals("••••efgh", result.toString())
     }
 
     @Test

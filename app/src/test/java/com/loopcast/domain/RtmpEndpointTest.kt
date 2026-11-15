@@ -30,7 +30,7 @@ class RtmpEndpointTest {
     @Test
     fun keepsBackupQueryOnBaseUrl() {
         val endpoint = RtmpEndpoint.parseFromUserInput(
-            "${RtmpEndpoint.YOUTUBE_BACKUP_RTMPS}/$key",
+            "rtmps://b.rtmp.youtube.com:443/live2/$key?backup=1",
             "",
         ).getOrThrow()
 
