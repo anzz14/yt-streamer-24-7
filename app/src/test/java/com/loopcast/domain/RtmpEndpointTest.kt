@@ -35,7 +35,10 @@ class RtmpEndpointTest {
         ).getOrThrow()
 
         assertEquals(RtmpEndpoint.YOUTUBE_BACKUP_RTMPS, endpoint.baseUrl)
-        assertEquals("${RtmpEndpoint.YOUTUBE_BACKUP_RTMPS}/$key", endpoint.fullUrl())
+        assertEquals(
+            "rtmps://b.rtmp.youtube.com:443/live2/$key?backup=1",
+            endpoint.fullUrl(),
+        )
     }
 
     @Test
