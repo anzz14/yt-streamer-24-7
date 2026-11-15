@@ -230,7 +230,7 @@ Test redact() in the JVM: key pattern masked; "rtmps://a.rtmp.youtube.com:443/li
 
 > **DONE TILL HERE (implementation):** Module 1 is implemented through Step 1.5. The dependency build and JVM test gate is still pending because terminal execution is blocked by the sandbox.
 
-> **CURRENT STEP:** Module 2 Steps 2.1–2.5 are implemented locally; the JVM test gate is pending because Gradle cannot access its cache/network in the restricted terminal.
+> **DONE TILL HERE:** Module 2 Steps 2.1–2.5 complete. JVM tests passed with `BUILD SUCCESSFUL` (49 actionable tasks).
 
 ---
 
